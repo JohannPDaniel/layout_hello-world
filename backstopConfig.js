@@ -6,7 +6,7 @@ const backstop = require('@mate-academy/backstop-config');
 const { basicScenario } = backstop;
 
 const PAGE_URL =
-  'https://johannpdaniel.github.io/layout_hello-world/';
+  'https://johannpdaniel.github.io/layout_hello-world/src/';
 
 const config = {
   ...backstop,
