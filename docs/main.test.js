@@ -83,7 +83,7 @@ describe('Environmental Check', () => {
         .toBeTruthy();
     } else {
       const VSCodeVersion = childProcess.execSync(
-        'code -v',
+        'code-insiders -v',
       ).toString();
 
       expect(!!VSCodeVersion)
