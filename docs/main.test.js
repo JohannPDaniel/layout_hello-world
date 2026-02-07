@@ -34,7 +34,7 @@ describe('Environmental Check', () => {
   beforeAll(() => {
     try {
       listOfExtensions = childProcess.execSync(
-        'code --list-extensions --show-versions',
+        'code-insiders --list-extensions --show-versions',
       ).toString();
     } catch (error) {
       listOfExtensions = null;
@@ -147,7 +147,7 @@ describe('Environmental Check', () => {
 
   test(`You should deploy test page to GitHub pages`, () => {
     if (OS === 'Workflow') {
-      const testLinkBody = getSiteBody('[TEST REPORT LINK]', '_report/');
+      const testLinkBody = getSiteBody('[TEST REPORT LINK]', 'report/');
 
       expect(testLinkBody)
         .toContain('BackstopJS Report');
