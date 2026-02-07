@@ -5,13 +5,16 @@
 const backstop = require('@mate-academy/backstop-config');
 const { basicScenario } = backstop;
 
-const PAGE_URL =
-  'https://johannpdaniel.github.io/layout_hello-world/src/';
+const DEMO_URL =
+  'https://johannpdaniel.github.io/layout_hello-world/';
+
+const REPORT_URL =
+  'https://johannpdaniel.github.io/layout_hello-world/report/';
 
 const config = {
   ...backstop,
 
-  fileNameTemplate: '{scenarioLabel}',
+  fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
 
   viewports: [
     {
@@ -22,12 +25,23 @@ const config = {
   ],
 
   scenarios: [
+    // 🔹 CENÁRIO 1 — DEMO
     {
       ...basicScenario,
-      label: 'Entire document',
-      url: PAGE_URL,
-      referenceUrl: PAGE_URL,
-      testUrl: PAGE_URL,
+      label: 'Demo page',
+      url: DEMO_URL,
+      referenceUrl: DEMO_URL,
+      testUrl: DEMO_URL,
+      selectors: ['document'],
+    },
+
+    // 🔹 CENÁRIO 2 — BACKSTOP REPORT
+    {
+      ...basicScenario,
+      label: 'Backstop report',
+      url: REPORT_URL,
+      referenceUrl: REPORT_URL,
+      testUrl: REPORT_URL,
       selectors: ['document'],
     },
   ],
